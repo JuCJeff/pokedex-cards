@@ -1,0 +1,11 @@
+.trophy-group {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.trophy-cup {
+  display: flex;
+  height: 1.5em;
+  width: 1.5em;
+}

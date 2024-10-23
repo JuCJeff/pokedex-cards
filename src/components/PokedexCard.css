@@ -1,0 +1,54 @@
+.search-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.pokedex-card-container {
+  margin: 12px;
+  max-width: 600px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  transition: border-color 0.25s;
+}
+
+.pokedex-card-container:hover {
+  border-color: #646cff;
+}
+
+.pokedex-image {
+  will-change: filter;
+  transition: transform 300ms, filter 300ms;
+}
+
+.pokedex-image:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.trophy-collections {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 1em 0;
+  padding: 0;
+  gap: 24px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.pokemon-details {
+  margin: 1em auto;
+}
