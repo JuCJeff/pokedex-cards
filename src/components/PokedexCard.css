@@ -10,6 +10,7 @@
 }
 
 .pokedex-card-container {
+  position: relative;
   margin: 12px;
   max-width: 600px;
   border-radius: 8px;
@@ -19,6 +20,39 @@
   font-family: inherit;
   background-color: #1a1a1a;
   transition: border-color 0.25s;
+}
+
+.icon-section {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
+
+.icon-button {
+  padding: 0.5em 1em;
+}
+
+.icon-button:hover {
+  border-color: transparent;
+}
+
+.icon-button:focus,
+.icon-button:focus-visible {
+  outline: unset;
+}
+
+.icons {
+  display: flex;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.shiny-icon {
+  color: #ffd700;
+}
+
+.regular-icon {
+  color: #c0c0c0;
 }
 
 .pokedex-image {
@@ -33,6 +67,7 @@
 
 .trophy-collections {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style-type: none;
   margin: 1em 0;
@@ -40,7 +75,6 @@
   gap: 24px;
 
   @media screen and (max-width: 600px) {
-    flex-direction: column;
     gap: 12px;
   }
 }

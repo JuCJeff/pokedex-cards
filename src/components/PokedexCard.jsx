@@ -1,6 +1,7 @@
 import "./PokedexCard.css";
 
 import { useState, useRef } from "react";
+import { HiOutlineSparkles, HiSparkles } from "react-icons/hi2";
 import PropTypes from "prop-types";
 
 import PokemonTypes from "./PokemonTypes";
@@ -11,11 +12,16 @@ import { getCardHoverColor, getCombinedTrophies } from "../utils";
 
 const PokedexCard = ({ pokemon }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isShiny, setIsShiny] = useState(false);
 
   const borderColorBasedOnType = getCardHoverColor(pokemon.types, isHovered);
   const combinedTrophies = getCombinedTrophies(vgcMastersAccolades, pokemon);
   const pokemonCriesLink = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemon.id}.ogg`;
   const pokemonDetailsLink = `https://bulbapedia.bulbagarden.net/wiki/${pokemon.name}_(Pok%C3%A9mon)`;
+
+  const handleShinyToggle = () => {
+    setIsShiny(!isShiny);
+  };
 
   const audioRef = useRef(null);
 
@@ -28,13 +34,30 @@ const PokedexCard = ({ pokemon }) => {
     >
       <header>
         <h2>{pokemon.name}</h2>
+        <div className="icon-section">
+          <button
+            className="icon-button"
+            aria-label="Shiny toggle"
+            onClick={handleShinyToggle}
+          >
+            {isShiny ? (
+              <HiSparkles className="icons shiny-icon" />
+            ) : (
+              <HiOutlineSparkles className="icons regular-icon" />
+            )}
+          </button>
+        </div>
       </header>
       <audio ref={audioRef} src={pokemonCriesLink} />
       <a href={pokemonDetailsLink} target="_blank" rel="noopener noreferrer">
         <img
           className="pokedex-image"
-          src={pokemon.sprites.front_default}
-          alt={pokemon.name}
+          src={
+            isShiny
+              ? pokemon.sprites.front_shiny
+              : pokemon.sprites.front_default
+          }
+          alt={`Image of ${pokemon.name}`}
           onMouseEnter={() => {
             audioRef.current.volume = 0.2;
             audioRef.current.play();
@@ -47,7 +70,7 @@ const PokedexCard = ({ pokemon }) => {
         />
       </a>
       <div>
-        <span>{pokemon.id}</span>
+        <span aria-label="Pokedex id">{pokemon.id}</span>
       </div>
 
       {combinedTrophies && (
@@ -71,7 +94,7 @@ const PokedexCard = ({ pokemon }) => {
       <PokemonTypes pokemon={pokemon} />
       <div className="pokemon-details">
         <a
-          aria-label="details"
+          aria-label="Pokemon details"
           href={pokemonDetailsLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -88,6 +111,7 @@ PokedexCard.propTypes = {
     name: PropTypes.string.isRequired,
     sprites: PropTypes.shape({
       front_default: PropTypes.string.isRequired,
+      front_shiny: PropTypes.string.isRequired,
     }).isRequired,
     types: PropTypes.arrayOf(
       PropTypes.shape({
