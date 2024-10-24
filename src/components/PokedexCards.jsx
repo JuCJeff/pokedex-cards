@@ -1,4 +1,4 @@
-import './PokedexCards.css';
+import "./PokedexCards.css";
 
 import { useState } from "react";
 

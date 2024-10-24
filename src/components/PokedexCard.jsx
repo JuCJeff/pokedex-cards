@@ -1,6 +1,6 @@
 import "./PokedexCard.css";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import PropTypes from "prop-types";
 
 import PokemonTypes from "./PokemonTypes";
@@ -12,24 +12,37 @@ import { getCardHoverColor, getCombinedTrophies } from "../utils";
 const PokedexCard = ({ pokemon }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const borderColorBasedOnType = getCardHoverColor(pokemon.types, isHovered);
   const combinedTrophies = getCombinedTrophies(vgcMastersAccolades, pokemon);
+  const pokemonCriesLink = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemon.id}.ogg`;
   const pokemonDetailsLink = `https://bulbapedia.bulbagarden.net/wiki/${pokemon.name}_(Pok%C3%A9mon)`;
+
+  const audioRef = useRef(null);
 
   return (
     <div
       className="pokedex-card-container"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ borderColor: getCardHoverColor(pokemon.types, isHovered) }}
+      style={{ borderColor: borderColorBasedOnType }}
     >
       <header>
         <h2>{pokemon.name}</h2>
       </header>
+      <audio ref={audioRef} src={pokemonCriesLink} />
       <a href={pokemonDetailsLink} target="_blank" rel="noopener noreferrer">
         <img
           className="pokedex-image"
           src={pokemon.sprites.front_default}
           alt={pokemon.name}
+          onMouseEnter={() => {
+            audioRef.current.volume = 0.2;
+            audioRef.current.play();
+          }}
+          onMouseLeave={() => {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+          }}
           loading="lazy"
         />
       </a>
