@@ -2,7 +2,7 @@
   "name": "pokedex-cards-vite",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://jucjeff.github.io/pokedex-cards/",
+  "homepage": "https://jucjeff.github.io/pokedex-cards",
   "type": "module",
   "scripts": {
     "predeploy": "vite build",
