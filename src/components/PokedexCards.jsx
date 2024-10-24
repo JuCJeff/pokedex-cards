@@ -1,3 +1,5 @@
+import './PokedexCards.css';
+
 import { useState } from "react";
 
 import PokedexCard from "./PokedexCard";
@@ -73,7 +75,7 @@ const PokedexCards = () => {
             </option>
           ))}
         </select>
-        <input {...inputProps} style={{ minWidth: "200px" }} />
+        <input {...inputProps} />
         <button type="submit">Search</button>
       </form>
 

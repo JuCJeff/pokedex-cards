@@ -1,0 +1,7 @@
+.pokemon-search-input {
+  min-width: 200px;
+
+  @media screen and (max-width: 600px) {
+    text-align: center;
+  }
+}
