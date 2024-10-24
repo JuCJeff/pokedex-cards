@@ -21,10 +21,6 @@
   transition: border-color 0.25s;
 }
 
-.pokedex-card-container:hover {
-  border-color: #646cff;
-}
-
 .pokedex-image {
   will-change: filter;
   transition: transform 300ms, filter 300ms;
