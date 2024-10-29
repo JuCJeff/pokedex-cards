@@ -57,7 +57,7 @@ const PokedexCard = ({ pokemon }) => {
               ? pokemon.sprites.front_shiny
               : pokemon.sprites.front_default
           }
-          alt={`Image of ${pokemon.name}`}
+          alt={`${pokemon.name}`}
           onMouseEnter={() => {
             audioRef.current.volume = 0.2;
             audioRef.current.play();
@@ -90,8 +90,8 @@ const PokedexCard = ({ pokemon }) => {
         </ul>
       )}
 
-      <h2>Types:</h2>
-      <PokemonTypes pokemon={pokemon} />
+      <PokemonTypes types={pokemon.types} />
+
       <div className="pokemon-details">
         <a
           aria-label="Pokemon details"
@@ -119,6 +119,15 @@ PokedexCard.propTypes = {
           name: PropTypes.string.isRequired,
         }).isRequired,
       }).isRequired
+    ).isRequired,
+    abilities: PropTypes.arrayOf(
+      PropTypes.shape({
+        ability: PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          url: PropTypes.string.isRequired,
+        }).isRequired,
+        is_hidden: PropTypes.bool.isRequired,
+      })
     ).isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
