@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 
 import PokemonTypes from "./PokemonTypes";
 import TrophyList from "./TrophyList";
+import Abilities from "./Abilities";
 
 import { trophyColors, vgcMastersAccolades } from "../data";
 import { getCardHoverColor, getCombinedTrophies } from "../utils";
@@ -91,6 +92,8 @@ const PokedexCard = ({ pokemon }) => {
       )}
 
       <PokemonTypes types={pokemon.types} />
+
+      <Abilities abilities={pokemon.abilities} />
 
       <div className="pokemon-details">
         <a
