@@ -37,4 +37,15 @@
   padding: 2em;
 }
 
+.github-link {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 1em;
+  color: #565656;
 
+  transition: color 0.1s ease-in-out;
+}
+
+.github-link:hover {
+  color: #727272;
+}

@@ -1,3 +1,5 @@
+import { FiGithub } from "react-icons/fi";
+
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
@@ -20,6 +22,11 @@ function App() {
       <div className="card">
         <PokedexCards />
       </div>
+      <footer>
+        <a href="https://github.com/JuCJeff/pokedex-cards" target="_blank">
+          <FiGithub className="github-link" />
+        </a>
+      </footer>
     </>
   );
 }
