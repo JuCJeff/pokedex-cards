@@ -2,19 +2,45 @@ import styles from "./Abilities.module.css";
 
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import { getAbilityDescriptionByUrl } from "../api/pokeApi";
 
-const AbilityItem = ({ name, description, isHidden }) => (
-  <div className={styles.abilityContainer}>
-    <div className={styles.abilityTitleContainer}>
-      <h4 className={styles.abilityTitle}>
-        {name} {isHidden && "(hidden)"}
-      </h4>
-    </div>
-    <p>{description}</p>
-  </div>
-);
+const AbilityItem = ({ name, description, isHidden }) => {
+  const [descriptionHidden, setDescriptionHidden] = useState(true);
+
+  const handleHiddenDescriptionClick = () => {
+    setDescriptionHidden(!descriptionHidden);
+  };
+
+  return (
+    <>
+      {isHidden && (
+        <div>
+          <button
+            onClick={handleHiddenDescriptionClick}
+            className={styles.hiddenAbilityToggleButton}
+          >
+            Hidden ability{" "}
+            {descriptionHidden ? <FiChevronUp /> : <FiChevronDown />}
+          </button>
+        </div>
+      )}
+      <div
+        className={`${styles.abilityContainer} ${
+          isHidden && descriptionHidden
+            ? styles.hiddenAbilityContainer
+            : styles.visibleAbilityContainer
+        }`}
+      >
+        <div className={styles.abilityTitleContainer}>
+          <h4 className={styles.abilityTitle}>{name}</h4>
+        </div>
+        <p>{description}</p>
+      </div>
+    </>
+  );
+};
 
 AbilityItem.propTypes = {
   name: PropTypes.string.isRequired,
