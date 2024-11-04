@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
-import { getAbilityDescriptionByUrl } from "../api/pokeApi";
+import { getAbilityDescriptionByUrl } from "../../api/pokeApi";
 
 const AbilityItem = ({ name, description, isHidden }) => {
   const [descriptionHidden, setDescriptionHidden] = useState(true);

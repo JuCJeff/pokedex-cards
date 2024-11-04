@@ -4,9 +4,9 @@ import { useState, useRef } from "react";
 import { HiOutlineSparkles, HiSparkles } from "react-icons/hi2";
 import PropTypes from "prop-types";
 
-import PokemonTypes from "./PokemonTypes";
-import TrophyList from "./TrophyList";
-import Abilities from "./Abilities";
+import { PokemonTypes } from "./PokemonTypes";
+import { TrophyList } from "./TrophyList";
+import { Abilities } from "./Abilities";
 
 import { trophyColors, vgcMastersAccolades } from "../data";
 import { getCardHoverColor, getCombinedTrophies } from "../utils";

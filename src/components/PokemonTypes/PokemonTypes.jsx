@@ -2,7 +2,7 @@ import styles from "./PokemonTypes.module.css";
 
 import PropTypes from "prop-types";
 
-import { getTypeColor } from "../utils";
+import { getTypeColor } from "../../utils";
 
 const PokemonTypes = ({ types }) => {
   return (

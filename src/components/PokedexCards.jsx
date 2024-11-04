@@ -43,6 +43,8 @@ const PokedexCards = () => {
         throw new Error("Invalid search method");
       }
 
+      console.log(data);
+
       setPokemon(data);
     } catch (err) {
       setError(err);
