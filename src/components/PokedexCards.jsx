@@ -1,4 +1,4 @@
-import "./PokedexCards.css";
+import styles from "./PokedexCards.module.css";
 
 import { useState } from "react";
 
@@ -16,7 +16,7 @@ const PokedexCards = () => {
   const [searchMethod, setSearchMethod] = useState("name");
 
   const inputProps = {
-    className: "pokemon-search-input",
+    className: styles.pokemonSearchInput,
     type: searchMethod === "index" ? "number" : "text",
     placeholder: "Search for a Pokémon",
     "aria-label": "Search for a Pokémon",
@@ -67,7 +67,7 @@ const PokedexCards = () => {
 
   return (
     <div>
-      <form onSubmit={handleSearch} className="search-form-container">
+      <form onSubmit={handleSearch} className={styles.searchFormContainer}>
         <select value={searchMethod} onChange={handleSearchMethod}>
           {searchMethods.map((method) => (
             <option key={method.value} value={method.value}>

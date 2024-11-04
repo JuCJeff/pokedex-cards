@@ -1,4 +1,4 @@
-.pokemon-types {
+.pokemonTypes {
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -7,7 +7,7 @@
     gap: 8px;
   }
   
-  .pokemon-types li {
+  .pokemonTypes li {
     border-radius: 24px;
     padding: 0.5em 1em;
   }

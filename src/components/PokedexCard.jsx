@@ -1,4 +1,4 @@
-import "./PokedexCard.css";
+import styles from "./PokedexCard.module.css";
 
 import { useState, useRef } from "react";
 import { HiOutlineSparkles, HiSparkles } from "react-icons/hi2";
@@ -28,23 +28,23 @@ const PokedexCard = ({ pokemon }) => {
 
   return (
     <div
-      className="pokedex-card-container"
+      className={styles.pokedexCardContainer}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ borderColor: borderColorBasedOnType }}
     >
       <header>
-        <h2 className="pokemon-name">{pokemon.name}</h2>
-        <div className="icon-section">
+        <h2 className={styles.pokemonName}>{pokemon.name}</h2>
+        <div className={styles.iconSection}>
           <button
-            className="icon-button"
+            className={styles.iconButton}
             aria-label="Shiny toggle"
             onClick={handleShinyToggle}
           >
             {isShiny ? (
-              <HiSparkles className="icons shiny-icon" />
+              <HiSparkles className={`icons ${styles.shinyIcon}`} />
             ) : (
-              <HiOutlineSparkles className="icons regular-icon" />
+              <HiOutlineSparkles className={`icons ${styles.regularIcon}`} />
             )}
           </button>
         </div>
@@ -52,7 +52,7 @@ const PokedexCard = ({ pokemon }) => {
       <audio ref={audioRef} src={pokemonCriesLink} />
       <a href={pokemonDetailsLink} target="_blank" rel="noopener noreferrer">
         <img
-          className="pokedex-image"
+          className={styles.pokedexImage}
           src={
             isShiny
               ? pokemon.sprites.front_shiny
@@ -75,7 +75,7 @@ const PokedexCard = ({ pokemon }) => {
       </div>
 
       {combinedTrophies && (
-        <ul className="trophy-collections">
+        <ul className={styles.trophyCollections}>
           <TrophyList
             count={combinedTrophies.first}
             color={trophyColors.gold}
@@ -95,7 +95,7 @@ const PokedexCard = ({ pokemon }) => {
 
       <Abilities abilities={pokemon.abilities} />
 
-      <div className="pokemon-details">
+      <div className={styles.pokemonDetails}>
         <a
           aria-label="Pokemon details"
           href={pokemonDetailsLink}

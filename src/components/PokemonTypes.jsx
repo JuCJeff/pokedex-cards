@@ -1,4 +1,4 @@
-import "./PokemonTypes.css";
+import styles from "./PokemonTypes.module.css";
 
 import PropTypes from "prop-types";
 
@@ -8,7 +8,7 @@ const PokemonTypes = ({ types }) => {
   return (
     <>
       <h3>Types</h3>
-      <ul className="pokemon-types">
+      <ul className={styles.pokemonTypes}>
         {types.map((type) => (
           <li
             key={type.type.name}
