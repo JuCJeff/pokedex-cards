@@ -22,6 +22,10 @@
   transition: border-color 0.25s;
 }
 
+.pokemon-name {
+  text-transform: capitalize;
+}
+
 .icon-section {
   position: absolute;
   top: 0.5em;

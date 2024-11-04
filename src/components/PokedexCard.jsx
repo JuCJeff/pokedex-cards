@@ -34,7 +34,7 @@ const PokedexCard = ({ pokemon }) => {
       style={{ borderColor: borderColorBasedOnType }}
     >
       <header>
-        <h2>{pokemon.name}</h2>
+        <h2 className="pokemon-name">{pokemon.name}</h2>
         <div className="icon-section">
           <button
             className="icon-button"
