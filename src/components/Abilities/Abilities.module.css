@@ -1,7 +1,6 @@
 .abilityContainer {
   padding: 0 2em;
-  transition: max-height 0.25s ease-in-out,
-    opacity 0.5s ease-in-out;
+  transition: max-height 0.25s ease-in-out, opacity 0.5s ease-in-out;
   overflow: hidden;
 }
 
@@ -31,4 +30,8 @@
   opacity: 1;
   max-height: 5em;
   margin-top: 1em;
+
+  @media screen and (max-width: 600px) {
+    max-height: 10em;
+  }
 }
