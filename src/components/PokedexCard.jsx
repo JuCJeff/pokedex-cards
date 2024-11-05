@@ -42,9 +42,11 @@ const PokedexCard = ({ pokemon }) => {
             onClick={handleShinyToggle}
           >
             {isShiny ? (
-              <HiSparkles className={`icons ${styles.shinyIcon}`} />
+              <HiSparkles className={`${styles.icons} ${styles.shinyIcon}`} />
             ) : (
-              <HiOutlineSparkles className={`icons ${styles.regularIcon}`} />
+              <HiOutlineSparkles
+                className={`${styles.icons} ${styles.regularIcon}`}
+              />
             )}
           </button>
         </div>
