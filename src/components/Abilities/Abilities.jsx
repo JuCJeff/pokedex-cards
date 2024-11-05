@@ -13,6 +13,18 @@ const AbilityItem = ({ name, description, isHidden }) => {
     setDescriptionHidden(!descriptionHidden);
   };
 
+  const getAbilityStyle = () => {
+    if (!isHidden) {
+      return "";
+    }
+
+    if (descriptionHidden) {
+      return styles.hiddenAbilityContainer;
+    }
+
+    return styles.visibleAbilityContainer;
+  };
+
   return (
     <>
       {isHidden && (
@@ -26,13 +38,7 @@ const AbilityItem = ({ name, description, isHidden }) => {
           </button>
         </div>
       )}
-      <div
-        className={`${styles.abilityContainer} ${
-          isHidden && descriptionHidden
-            ? styles.hiddenAbilityContainer
-            : styles.visibleAbilityContainer
-        }`}
-      >
+      <div className={`${styles.abilityContainer} ${getAbilityStyle()}`}>
         <div className={styles.abilityTitleContainer}>
           <h4 className={styles.abilityTitle}>{name}</h4>
         </div>
