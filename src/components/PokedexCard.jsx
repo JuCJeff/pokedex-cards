@@ -9,7 +9,11 @@ import { TrophyList } from "./TrophyList";
 import { Abilities } from "./Abilities";
 
 import { trophyColors, vgcMastersAccolades } from "../data";
-import { getCardHoverColor, getCombinedTrophies } from "../utils";
+import {
+  getCardHoverColor,
+  getCombinedTrophies,
+  getFormattedPokemonName,
+} from "../utils";
 
 const PokedexCard = ({ pokemon }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -34,7 +38,9 @@ const PokedexCard = ({ pokemon }) => {
       style={{ borderColor: borderColorBasedOnType }}
     >
       <header>
-        <h2 className={styles.pokemonName}>{pokemon.name}</h2>
+        <h2 className={styles.pokemonName}>
+          {getFormattedPokemonName(pokemon.name)}
+        </h2>
         <div className={styles.iconSection}>
           <button
             className={styles.iconButton}

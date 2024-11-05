@@ -57,3 +57,7 @@ export const getCombinedTrophies = (pokemonAccolades, pokemon) => {
 
   return combinedTrophies;
 };
+
+export const getFormattedPokemonName = (pokemon) => {
+  return pokemon.replace(/-/g, " ");
+};

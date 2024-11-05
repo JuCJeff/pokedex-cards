@@ -1,4 +1,9 @@
-import { getCombinedTrophies } from "./pokemonHelpers";
+import { getCombinedTrophies, getFormattedPokemonName } from "./pokemonHelpers";
 import { getCardHoverColor, getTypeColor } from "./stylingHelpers";
 
-export { getCardHoverColor, getCombinedTrophies, getTypeColor };
+export {
+  getCardHoverColor,
+  getCombinedTrophies,
+  getFormattedPokemonName,
+  getTypeColor,
+};
