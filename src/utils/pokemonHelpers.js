@@ -61,3 +61,12 @@ export const getCombinedTrophies = (pokemonAccolades, pokemon) => {
 export const getFormattedPokemonName = (pokemon) => {
   return pokemon.replace(/-/g, " ");
 };
+
+export const getFormattedPokemonSublink = (pokemonName) => {
+  return pokemonName
+    .split("-")
+    .map(
+      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() // Capitalize the first letter, lowercase the rest
+    )
+    .join("_");
+};

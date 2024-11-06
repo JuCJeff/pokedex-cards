@@ -13,6 +13,7 @@ import {
   getCardHoverColor,
   getCombinedTrophies,
   getFormattedPokemonName,
+  getFormattedPokemonSublink,
 } from "../utils";
 
 const PokedexCard = ({ pokemon }) => {
@@ -22,7 +23,11 @@ const PokedexCard = ({ pokemon }) => {
   const borderColorBasedOnType = getCardHoverColor(pokemon.types, isHovered);
   const combinedTrophies = getCombinedTrophies(vgcMastersAccolades, pokemon);
   const pokemonCriesLink = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemon.id}.ogg`;
-  const pokemonDetailsLink = `https://bulbapedia.bulbagarden.net/wiki/${pokemon.name}_(Pok%C3%A9mon)`;
+
+  const pokemonName = pokemon.species.name;
+  const pokemonDetailsSubLink = getFormattedPokemonSublink(pokemonName);
+
+  const pokemonDetailsLink = `https://bulbapedia.bulbagarden.net/wiki/${pokemonDetailsSubLink}_(Pok%C3%A9mon)`;
 
   const handleShinyToggle = () => {
     setIsShiny(!isShiny);
