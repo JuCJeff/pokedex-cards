@@ -1,0 +1,12 @@
+.flavorText {
+  display: flex;
+  margin: 0 5em;
+
+  @media screen and (max-width: 600px) {
+    margin: 0 1em;
+  }
+}
+
+.flavorText p {
+  margin-bottom: 0;
+}

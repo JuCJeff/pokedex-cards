@@ -4,9 +4,10 @@ import { useState, useRef } from "react";
 import { HiOutlineSparkles, HiSparkles } from "react-icons/hi2";
 import PropTypes from "prop-types";
 
+import { Abilities } from "./Abilities";
+import { FlavorText } from "./FlavorText";
 import { PokemonTypes } from "./PokemonTypes";
 import { TrophyList } from "./TrophyList";
-import { Abilities } from "./Abilities";
 
 import { trophyColors, vgcMastersAccolades } from "../data";
 import {
@@ -44,7 +45,7 @@ const PokedexCard = ({ pokemon }) => {
     >
       <header>
         <h2 className={styles.pokemonName}>
-          {getFormattedPokemonName(pokemon.name)}
+          {getFormattedPokemonName(pokemonName)}
         </h2>
         <div className={styles.iconSection}>
           <button
@@ -71,7 +72,7 @@ const PokedexCard = ({ pokemon }) => {
               ? pokemon.sprites.front_shiny
               : pokemon.sprites.front_default
           }
-          alt={`${pokemon.name}`}
+          alt={`${pokemonName}`}
           onMouseEnter={() => {
             audioRef.current.volume = 0.2;
             audioRef.current.play();
@@ -105,6 +106,8 @@ const PokedexCard = ({ pokemon }) => {
       )}
 
       <PokemonTypes types={pokemon.types} />
+
+      <FlavorText pokemon={pokemon} />
 
       <Abilities abilities={pokemon.abilities} />
 
@@ -146,6 +149,9 @@ PokedexCard.propTypes = {
       })
     ).isRequired,
     id: PropTypes.number.isRequired,
+    species: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }),
   }).isRequired,
 };
 

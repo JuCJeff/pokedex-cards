@@ -323,3 +323,17 @@ export const vgcMastersAccolades = [
     ],
   },
 ];
+
+// v1 and v2 is used to handle game specific Pokémons
+export const pokemonGenerationsRange = [
+  { index: 151, v1: "red", v2: "green" },
+  { index: 251, v1: "heartgold", v2: "soulsilver" },
+  { index: 386, v1: "omega-ruby", v2: "alpha-sapphire" },
+  { index: 493, v1: "diamond", v2: "pearl" },
+  { index: 649, v1: "black", v2: "white" },
+  { index: 721, v1: "x", v2: "y" },
+  { index: 807, v1: "ultra-sun", v2: "ultra-moon" },
+  { index: 898, v1: "sword", v2: "shield" },
+  { index: 905, v1: "legends-arceus" },
+  { index: 1025, v1: "scarlet", v2: "violet" },
+];
