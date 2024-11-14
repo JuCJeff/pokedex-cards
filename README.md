@@ -1,6 +1,6 @@
 # Pokedex Cards
 
-A frontend app that utilizes the [PokeAPI](https://pokeapi.co/) to search for Pokémon and display them as interactive cards.
+A modern react frontend app that utilizes the [PokeAPI](https://pokeapi.co/) to search for Pokémon and display them as interactive cards.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 ![GitHub stars](https://img.shields.io/github/stars/JuCJeff/pokedex-cards?style=social)
