@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import { getPokemonFlavorText } from "../../api/pokeApi";
+import { sanitizeFlavorText } from "../../utils/pokemonHelpers";
+
 import styles from "./FlavorText.module.css";
 
 const FlavorText = ({ pokemon }) => {
@@ -18,7 +20,7 @@ const FlavorText = ({ pokemon }) => {
           pokemon.id
         );
 
-        setFlavorText(flavorText);
+        setFlavorText(sanitizeFlavorText(flavorText));
       } catch (err) {
         console.error("Error fetching ability descriptions:", err);
         setError(err);

@@ -70,3 +70,7 @@ export const getFormattedPokemonSublink = (pokemonName) => {
     )
     .join("_");
 };
+
+export const sanitizeFlavorText = (text) => {
+  return text.replace(/\f/g, " ").trim(); // remove the form feed character in certain flavor text data
+};

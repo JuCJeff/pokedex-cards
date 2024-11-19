@@ -2,6 +2,7 @@ import {
   getCombinedTrophies,
   getFormattedPokemonName,
   getFormattedPokemonSublink,
+  sanitizeFlavorText,
 } from "./pokemonHelpers";
 import { getCardHoverColor, getTypeColor } from "./stylingHelpers";
 
@@ -11,4 +12,5 @@ export {
   getFormattedPokemonName,
   getFormattedPokemonSublink,
   getTypeColor,
+  sanitizeFlavorText,
 };
