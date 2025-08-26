@@ -117,3 +117,4 @@ The international tournament trophy data is sourced from various places, includi
 - [2022 Pokémon World Championships - VGCPedia](https://www.vgcpedia.com/2022-pokemon-world-championships/)
 - [2023 Pokémon World Championships - Pokémon Website](https://www.pokemon.com/us/play-pokemon/worlds/2023/vgc-masters)
 - [2024 Pokémon World Championships - Pokémon Website](https://www.pokemon.com/us/play-pokemon/worlds/2024/vgc-masters)
+- [2025 Pokémon World Championships - Pokedata](https://www.pokedata.ovh/standingsVGC/0000150/masters/)

@@ -322,6 +322,33 @@ export const vgcMastersAccolades = [
       "Entei",
     ],
   },
+  {
+    year: "2025",
+    first: [
+      "Lunala",
+      "Koraidon",
+      "Ursaluna",
+      "Flutter-Mane",
+      "Chi-Yu",
+      "Brute-Bonnet",
+    ],
+    second: [
+      "Calyrex-shadow",
+      "Raging-bolt",
+      "Brute-Bonnet",
+      "Koraidon",
+      "Landorus",
+      "Incineroar",
+    ],
+    third: [
+      "Calyrex-Ice",
+      "Incineroar",
+      "Smeargle",
+      "Koraidon",
+      "Rillaboom",
+      "Landorus",
+    ],
+  },
 ];
 
 // v1 and v2 is used to handle game specific Pokémons
